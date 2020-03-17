@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/3d49d575-25e0-49d1-9721-2a1be52a0bdc/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/ArkProgV2",
+    "appService.deploySubpath": ""
+}

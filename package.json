@@ -1,0 +1,22 @@
+{
+  "name": "nodecourseprojectv1",
+  "version": "1.0.0",
+  "description": "Learning project that uses node",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.0.0",
+    "express": "~4.9.0",
+    "jade": "^1.11.0",
+    "morgan": "~1.3.0",
+    "nodemon": "^2.0.2",
+    "serve-favicon": "~2.1.3"
+  },
+  "author": "",
+  "license": "ISC"
+}

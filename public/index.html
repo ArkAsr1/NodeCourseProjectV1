@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Game</title>
+  <!-- <documentation at https://demos.jquerymobile.com/1.4.1/ > -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+  <link rel="stylesheet" href="http://arkprogv2.azurewebsites.net/themes/cyberTruckTheme.css" />
+  <link rel="stylesheet" href="http://arkprogv2.azurewebsites.net/themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="http://arkprogv2.azurewebsites.net/javascripts/index.js"></script>
+
+  <style>
+    .floating-left {
+      float: left;
+      margin: 10px;
+      margin-top: 0px;
+    }
+    .spec {
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      width: 40%;
+      display: inline-block;
+      text-align: center;
+      padding: 10px;
+      margin: 0px;
+    }
+    .value {
+      width: 40%;
+      border-bottom: 1px solid black;
+      display: inline-block;
+      text-align: center;
+      padding: 10px;
+      margin: 0px;
+    }
+    .table-title {
+      background-color: pink;
+      color: black;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- Start of Home page -->
+  <div data-role="page" id="home">
+    <!--  login page header -->
+    <div data-role="header" data-theme='b'>
+      <!-- helpful location   -->
+      <!-- https://demos.jquerymobile.com/1.2.0/docs/toolbars/docs-navbar.html -->
+
+      <h1>CyberTruck Presents!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+
+
+      
+
+    </div>
+    <!--  login page content -->
+    <div data-role="content" data-theme='e'>
+      <h2>Meet the Tesla CyberTruck</h2>
+      <img src="http://arkprogv2.azurewebsites.net/images/cybertruck.jpg" class="floating-left">
+      Now entering a new class of strength, speed and versatility—only possible with an all-electric design. The powerful drivetrain and low center of gravity provides extraordinary traction control and torque—enabling acceleration from 0-60 mph in as little as 2.9 seconds and up to 500 miles of range.
+      <hr>
+      Pending Orders:<br>
+      <div id="divOrderList"></div>
+    
+    </div>
+
+    <!--  login page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+
+
+  <div data-role="page" id="page1">
+    <!--  page1 page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>CyberTruck Presents!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!-- t page content -->
+    <div data-role="content" data-theme='e'>
+      It's as easy as 1 2 3:<br><br>
+      <label for="name">1. Enter your name</label>
+      <input type="text" id="name" name="name" value="">
+      <label for="vId">2. Pick a Vehicle</label>
+      <select id="vId">
+      </select>
+      <label for="buttonOrder">3. Place your Order</label>
+      <input type="button" value="Click To Order Now" id="buttonOrder">
+    </div>
+ 
+    <!--  newaccount page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+
+
+
+  <!-- Start of gamelost page -->
+  <div data-role="page" id="page2">
+    <!--  gamelost page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>CyberTruck Presents!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+
+    <!--  gamelost page content -->
+    <div data-role="content" data-theme='e'>
+      <div id="divChoicelist"></div>
+    </div>
+
+    <!--  gamelost page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+  </div>
+  <!-- Page 3 Single -->
+  <!-- Start of gamewon page -->
+  <div data-role="page" id="page3">
+    <!--  gamewon page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>CyberTruck Presents!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!--  gamewon page content -->
+    <div data-role="content" data-theme='e'>
+      <h1 id="IDparamHere">change1</h1> <!-- hidden    a place to stash the user ID -->
+      <h2> CyberTruck Specs</h2>
+      <span class="spec table-title">Attribute</span><span class="value table-title">Value</span>
+      <span class="spec">0-60 MPH</span><span class="value">&lt;6.5 SECONDS</span>
+      <span class="spec">RANGE</span><span class="value">250+ MILES (EPA EST.)</span>
+      <span class="spec">DRIVETRAIN</span><span class="value">REAR-WHEEL DRIVE</span>
+      <span class="spec">STORAGE</span><span class="value">100 CU FT</span>
+      <span class="spec">VAULT LENGTH</span><span class="value">6.5 FT</span>
+      <span class="spec">TOWING CAPACITY</span><span class="value">7,500+ LBS</span>
+      <span class="spec">AUTOPILOT</span><span class="value">STANDARD</span>
+      <span class="spec">ADAPTIVE AIR SUSPENSION</span><span class="value">STANDARD</span>
+      <span class="spec">GROUND CLEARANCE</span><span class="value">35 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+
+  
+    </div>
+
+    <!--  gamewon page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+
+  <!-- Page 4 Dual -->
+  <div data-role="page" id="page4">
+    <!--  gamewon page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>CyberTruck Presents A new Title!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!--  gamewon page content -->
+    <div data-role="content" data-theme='e'>
+      <h1 id="IDparamHere">Dual Motor AWD</h1> <!-- hidden    a place to stash the user ID -->
+      <h2> CyberTruck Specs - DUAL</h2>
+      <span class="spec table-title">Attribute</span><span class="value table-title">Value</span>
+      <span class="spec">0-60 MPH</span><span class="value">&lt;4.5 SECONDS</span>
+      <span class="spec">RANGE</span><span class="value">300+ MILES (EPA EST.)</span>
+      <span class="spec">DRIVETRAIN</span><span class="value">TRI MOTOR ALL-WHEEL DRIVE</span>
+      <span class="spec">STORAGE</span><span class="value">100 CU FT</span>
+      <span class="spec">VAULT LENGTH</span><span class="value">6.5 FT</span>
+      <span class="spec">TOWING CAPACITY</span><span class="value">7,500+ LBS</span>
+      <span class="spec">AUTOPILOT</span><span class="value">STANDARD</span>
+      <span class="spec">ADAPTIVE AIR SUSPENSION</span><span class="value">STANDARD</span>
+      <span class="spec">GROUND CLEARANCE</span><span class="value">35 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+      
+
+  
+    </div>
+
+    <!--  gamewon page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+
+
+  <!-- Page 5 Tri -->
+  <div data-role="page" id="page5">
+    <!--  gamewon page header -->
+    <div data-role="header" data-theme='b'>
+      <h1>CyberTruck Presents!</h1>
+      <div data-role="navbar" data-theme='c'>
+        <ul>
+          <li><a href="#home">Tesla CyberTruck</a></li>
+          <li><a href="#page1">Buy Truck</a></li>
+          <li><a href="#page2">Pick a Model</a></li>
+          <li><a href="#page3">Tech Specifications</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+    <!--  gamewon page content -->
+    <div data-role="content" data-theme='e'>
+      <h1 id="IDparamHere">change1</h1> <!-- hidden    a place to stash the user ID -->
+      <h2> CyberTruck Specs - TRI</h2>
+      <span class="spec table-title">Attribute</span><span class="value table-title">Value</span>
+      <span class="spec">0-60 MPH</span><span class="value">&lt;7.5 SECONDS</span>
+      <span class="spec">RANGE</span><span class="value">250+ MILES (EPA EST.)</span>
+      <span class="spec">DRIVETRAIN</span><span class="value">REAR-WHEEL DRIVE</span>
+      <span class="spec">STORAGE</span><span class="value">100 CU FT</span>
+      <span class="spec">VAULT LENGTH</span><span class="value">6.5 FT</span>
+      <span class="spec">TOWING CAPACITY</span><span class="value">7,500+ LBS</span>
+      <span class="spec">AUTOPILOT</span><span class="value">STANDARD</span>
+      <span class="spec">ADAPTIVE AIR SUSPENSION</span><span class="value">STANDARD</span>
+      <span class="spec">GROUND CLEARANCE</span><span class="value">35 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+      <span class="spec">DEPARTURE ANGLE</span><span class="value">28 DEGREES</span>
+
+  
+    </div>
+
+    <!--  gamewon page footer -->
+    <div data-role="footer" data-theme='b'>
+      <h1>Copyrigtht 2020 by Kurt Friedrich</h1>
+    </div>
+  </div>
+  </div>
+
+
+
+</body>
+
+</html>
